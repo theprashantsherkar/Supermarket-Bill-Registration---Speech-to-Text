@@ -39,18 +39,21 @@ def main():
 
     speak("Please enter company name.")
     company_name = getInput("Please enter company name:")
+    print(company_name)
     while not company_name:
         speak("Please say the company name again.")
         company_name = getInput("Please say the company name again:")
 
     speak("Please enter the bill number.")
     bill_no = getInput("Please enter the bill number:")
+    print(bill_no)
     while not bill_no:
         speak("Please enter the bill number again")
         bill_no = getInput("Please enter the bill number again:")
 
     speak("Please enter the total amount")
     total_amount = getInput("Please enter the total amount:")
+    print(total_amount)
     while not total_amount:
         speak("Please enter the total amount again.")
         total_amount = getInput("Please enter the total amount again:")
