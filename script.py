@@ -58,11 +58,30 @@ def main():
         speak("Please enter the total amount again.")
         total_amount = getInput("Please enter the total amount again:")
 
-    sheet.append([company_name, bill_no, total_amount])
-    wb.save("supermarket_bills.xlsx")
+    speak("confirm the data you have entered.")
+    confirmation = input("is the data that you've entered correct? (yes/no) ")
+    if(confirmation == "yes"):
+        sheet.append([company_name, bill_no, total_amount])
+        wb.save("supermarket_bills.xlsx")
+        speak("Data saved successfully!")
+        print("Data saved successfully!")
 
-    speak("Data saved successfully!")
-    print("Data saved successfully!")
+    elif confirmation == "no":
+        print('enter the data manually.')
+        company_name = input("Please enter company name:")
+        bill_no = int(input("Please enter the bill number:"))
+        total_amount = int(input("Please enter the total amount:"))
+        sheet.append([company_name, bill_no, total_amount])
+        wb.save("supermarket_bills.xlsx")
+        speak("Data saved successfully!")
+        print("Data saved successfully!")
+
+    else:
+        print(f"please enter a valid input.")
+
 
 if __name__ == "__main__":
-    main()
+    speak("enter the number of entries.")
+    a = int(input("enter the number of entries."))
+    for item in range(0,a):
+        main()
